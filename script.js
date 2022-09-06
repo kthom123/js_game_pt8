@@ -1,5 +1,6 @@
 import Player from './player.js';
 import InputHandler from './input.js';
+import {drawStatusText} from './utils.js';
 
 window.addEventListener('load', function(){
   const loading = document.getElementById('loading');
@@ -15,6 +16,7 @@ window.addEventListener('load', function(){
 
   function animate(){
     console.log(input.lastKey);
+    drawStatusText(ctx, input);
     requestAnimationFrame(animate);
   };
   animate();
