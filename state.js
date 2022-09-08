@@ -15,10 +15,10 @@ class StandingLeft extends State {
     this.player = player;
   }
   enter(){
-
+    this.player.frameY = 1;
   }
   handleInput(input){
-
+    if (input === 'PRESS right') // set state to StandingRight
   }
 }
 
@@ -28,9 +28,9 @@ class StandingRight extends State {
     this.player = player;
   }
   enter(){
-
+    this.player.frameY = 0;
   }
   handleInput(input){
-
+    if (input === 'PRESS left') // set state to StandingLeft
   }
 }
