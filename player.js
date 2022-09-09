@@ -1,3 +1,5 @@
+import {StandingLeft, StandingRight} from "./state.js";
+
 export default class Player {
   constructor(gameWidth, gameHeight){
     this.gameWidth = gameWidth;
