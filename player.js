@@ -2,7 +2,7 @@ export default class Player {
   constructor(gameWidth, gameHeight){
     this.gameWidth = gameWidth;
     this.gameHeight = gameHeight;
-    this.states = [];
+    this.states = [0,1];
     this.currentState = this.states[0];
     this.image = document.getElementById("dogImage");
     this.width = 200;
