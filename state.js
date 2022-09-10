@@ -118,10 +118,10 @@ export class JumpingLeft extends State {
   }
   enter(){
     this.player.frameY = 3;
-    this.player.vy -= 20;
+    this.player.vy -= 10;
   }
   handleInput(input){
-
+    if (input === 'PRESS right') this.player.setState(states.JUMPING_RIGHT);
   }
 }
 
@@ -132,9 +132,9 @@ export class JumpingRight extends State {
   }
   enter(){
     this.player.frameY = 2;
-    this.player.vy -= 20;
+    this.player.vy -= 10;
   }
   handleInput(input){
-
+    if (input === 'PRESS left') this.player.setState(states.JUMPING_LEFT);
   }
 }
