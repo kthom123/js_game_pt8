@@ -16,11 +16,12 @@ window.addEventListener('load', function(){
   let lastTime = 0;
   function animate(timeStamp){
     const deltaTime = timeStamp - lastTime;
+    lastTime = deltaTime;
     ctx.clearRect(0,0,canvas.width, canvas.height);
     player.update(input.lastKey);
-    player.draw(ctx);
+    player.draw(ctx, deltaTime);
     drawStatusText(ctx, input, player);
     requestAnimationFrame(animate);
   };
-  animate();
+  animate(0);
 });
