@@ -92,7 +92,7 @@ export class RunningRight extends State {
     this.player = player;
   }
   enter(){
-    this.player.frameY = 7;
+    this.player.frameY = 6;
   }
   handleInput(input){
     if (input === 'PRESS left') this.player.setState(states.RUNNING_LEFT);
