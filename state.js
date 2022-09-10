@@ -34,3 +34,17 @@ export class StandingRight extends State {
     if (input === 'PRESS left') this.player.setState(states.STANDING_LEFT);
   }
 }
+
+export class SittingLeft extends State {
+  constructor(player){
+    super('SITTING LEFT');
+    this.player = player;
+  }
+  enter(){
+    this.player.frameY = 1;
+  }
+  handleInput(input){
+    if (input === 'PRESS right') this.player.setState(states.SITTING_RIGHT);
+    else if (input === 'PRESS up') this.player.setState(states.STANDING_RIGHT);
+  }
+}
