@@ -30,6 +30,11 @@ export default class Player {
     else if (this.x >= this.gameWidth - this.width) this.x = this.gameWidth - this.width;
     // vertical movement
     this.y += this.vy;
+    if (this.y < this.gameHeight - this.height){
+      this.vy += this.weight;
+    } else {
+      this.vy = 0;
+    }
   }
   setState(state){
     this.currentState = this.states[state];
