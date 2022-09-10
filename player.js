@@ -20,7 +20,11 @@ export default class Player {
     context.drawImage(this.image, this.width * this.frameX, this.height * this.frameY, this.width, this.height, this.x, this.y, this.width, this.height);
   }
   update(input){
-    this.currentState.handleInput(input)
+    this.currentState.handleInput(input);
+    // horizontal movement
+    this.x += this.speed;
+    if (this.x <= 0) this.x = 0;
+    else if (this.x >= this.gameWidth - this.width) this.x = this.gameWidth - this.width;
   }
   setState(state){
     this.currentState = this.states[state];
