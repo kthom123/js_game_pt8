@@ -5,6 +5,8 @@ export const states = {
   SITTING_RIGHT: 3,
   RUNNING_LEFT: 4,
   RUNNING_RIGHT: 5,
+  JUMPING_LEFT: 8,
+  JUMPING_RIGHT: 9,
 }
 
 class State {
@@ -104,5 +106,31 @@ export class RunningRight extends State {
     if (input === 'PRESS left') this.player.setState(states.RUNNING_LEFT);
     else if (input === 'RELEASE right') this.player.setState(states.STANDING_RIGHT);
     else if (input === 'PRESS down') this.player.setState(states.SITTING_RIGHT);
+  }
+}
+
+export class JumpingLeft extends State {
+  constructor(player){
+    super('JUMPING LEFT');
+    this.player = player;
+  }
+  enter(){
+    this.player.frameY = 3;
+  }
+  handleInput(input){
+
+  }
+}
+
+export class JumpingRight extends State {
+  constructor(player){
+    super('JUMPING RIGHT');
+    this.player = player;
+  }
+  enter(){
+    this.player.frameY = 2;
+  }
+  handleInput(input){
+
   }
 }
